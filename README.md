@@ -2,27 +2,31 @@
 
 ## usersテーブル
 
-| Column | 
+| Column             | Type    | Options     |
+| name               | string  | null: false |
+| email              | string  | null: false |
+| phone              | integer | null: false |
+| encrypted_password | string  | null: false |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :favorites
 
-Things you may want to cover:
+## gymsテーブル
 
-* Ruby version
+| Column  | Type    | Options     |
+| name    | string  | null :false |
+| phone   | integer | null: false |
+| address | string  | null: false | 
 
-* System dependencies
+### Association
+- has_many :favorites
 
-* Configuration
+## favoritesテーブル
 
-* Database creation
+| Column  | Type       | Options                        |
+| user    | references | null: false, foreign_key: true |
+| gym     | references | null: false, foreign_key: true |
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :gym
