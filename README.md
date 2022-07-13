@@ -1,4 +1,4 @@
-# ER図
+# README
 
 ## usersテーブル
 
