@@ -1,18 +1,16 @@
-<div class="contents row">
-  <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
-    <div class="more">
-      <span><%= image_tag 'arrow_top.png' %></span>
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
-        </li>
-      </ul>
-    </div>
-    <p><%= @tweet.text %></p>
-    <span class="name"><%= @tweet.name %>
-    </span>
+<%= render partial: "layouts/header" %>
+
+<div class="card" style="width: 18rem;">
+  <img src="<%= "#{@gym.Image}" %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">店舗情報</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= @gym.name %></li>
+    <li class="list-group-item"><a href="tel:@gym.phone"><%= @gym.phone %></a></li>
+    <li class="list-group-item"><%= @gym.address %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to '店舗URL', @gym.url,class:"card-link" %>
   </div>
 </div>
