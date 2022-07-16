@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :gyms, only: [:index, :show] do
   collection do
     get 'search'
-    resources :favorites, only: [:index, :destory]
+    resource :favorites, only: [:destory, :create]
   end
   end
   end
