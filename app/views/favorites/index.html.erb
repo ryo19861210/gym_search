@@ -2,6 +2,8 @@
 
 <%= render partial: "layouts/search" %>
 
+
+
         <!-- 表 -->
         <div class="container">
             <table class="table table-hover">
@@ -20,7 +22,7 @@
                         <td><%= gym.phone %></td>
                         <td><%= gym.address %></td>
                         <td>
-                            <%= link_to '詳細', favorite_path(gym.id),class:"btn btn-secondary btn-sm" %>
+                            <%= link_to '詳細', gym_path(gym.id),class:"btn btn-secondary btn-sm" %>
                             <i class="fa fa-アイコン名" aria-hidden="true"></i>
                         </td>
                     </tr>                                
@@ -77,3 +79,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+
+
