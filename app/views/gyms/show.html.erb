@@ -1,5 +1,40 @@
 <%= render partial: "layouts/header" %>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=  'AIzaSyDqMqBKtBHk44SypsJ1BeTugqz2spBVhgQ' %>"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
+
+
+
+<h2>gmap</h2>
+<div id='map'></div>
+
+<style>
+#map {
+  height: 300px;
+  width: 300px;
+}
+</style>
+
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: gon.lat, lng: gon.lng },
+    zoom: 12,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: gon.lat, lng: gon.lng },
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqMqBKtBHk44SypsJ1BeTugqz2spBVhgQ&callback=initMap" async defer></script>
+
 <div class="card" style="width: 18rem;">
   <img src="<%= "#{@gym.Image}" %>" class="card-img-top" alt="...">
   <div class="card-body">
@@ -14,3 +49,4 @@
     <%= link_to '店舗URL', @gym.url,class:"card-link" %>
   </div>
 </div>
+

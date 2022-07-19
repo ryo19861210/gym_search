@@ -5,6 +5,8 @@ class GymsController < ApplicationController
 
   def show
     @gym = Gym.find(params[:id])
+    gon.lat = @gym.lat.to_f
+    gon.lng = @gym.lng.to_f
   end
 
   def search
