@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @gyms = @user.gyms
-    @favorite_gyms = @user.favorite_gyms
+
+    favorites = Favorite.where(user_id: current_user.id).pluck(:gym_id)
+    @favorite_list = Gym.find(favorites)
   end
 end

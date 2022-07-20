@@ -58,3 +58,8 @@ gem 'devise'
 gem 'pry-rails'
 gem 'font-awesome-rails'
 gem 'ransack'
+gem 'gmaps4rails'
+gem 'dotenv-rails'
+gem "geocoder"
+gem "gon"
+gem 'rabl-rails'
