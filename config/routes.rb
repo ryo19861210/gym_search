@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
     root to: 'gyms#index'
+  resources :teams, only: [:new, :create, :destroy]
   resources :gyms, only: [:index, :show] do
-    resource :favorites, only: [:index, :destroy, :create]
   collection do
     get 'search'
   end

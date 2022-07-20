@@ -7,4 +7,10 @@ class User < ApplicationRecord
   validates :phone, presence: true
 
   has_many :favorites, dependent: :destroy
+  has_one :team
+
+  def unsubscribe
+    team = Team.find_by(user_id: id)
+    team.destroy
+  end
 end
