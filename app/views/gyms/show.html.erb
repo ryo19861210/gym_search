@@ -6,13 +6,13 @@
 
 
 
-<h2>gmap</h2>
+<h2>map</h2>
 <div id='map'></div>
 
 <style>
 #map {
   height: 300px;
-  width: 300px;
+  width: 285px;
 }
 </style>
 
@@ -46,7 +46,7 @@ function initMap(){
     <li class="list-group-item"><%= @gym.address %></li>
   </ul>
   <div class="card-body">
-    <%= link_to '店舗URL', @gym.url,class:"card-link" %>
+    <%= link_to '店舗URL', @gym.url, target: :_blanck, rel: "noopener noreferrer", class:"card-link" %>
   </div>
 </div>
 
