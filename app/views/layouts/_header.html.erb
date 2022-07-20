@@ -52,6 +52,12 @@
         <li class="nav-item">
         <%= link_to current_user.name, edit_user_registration_path, class: "nav-link active" %>
         </li>
+        <% if @team.user_id == current_user.id %>
+        <% else %>
+        <li class="nav-item">
+        <%= link_to "有償版へグレードアップ", new_team_path,  class:"nav-link" %>
+        </li>
+        <% end %>
         <li class="nav-item">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %>
         </li>
