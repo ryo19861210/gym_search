@@ -8,11 +8,11 @@ class TeamsController < ApplicationController
     @team = Team.new(user_id: current_user.id)
     customer = Stripe::Customer.create({
                                         source: params[:stripeToken]
-                                       })
+                                      })
     subscription = Stripe::Subscription.create({
-                                                 customer: customer.id,
-                                                 plan: 'price_1LNWJtCUmfQ7g7y2yJZWEbuo'
-                                               })
+                                                customer: customer.id,
+                                                plan: 'price_1LNWJtCUmfQ7g7y2yJZWEbuo'
+                                              })
     @team.plan_id = 'price_1LNWJtCUmfQ7g7y2yJZWEbuo'
     @team.customer_id = customer.id
     @team.stripe_subscription_id = subscription.id
