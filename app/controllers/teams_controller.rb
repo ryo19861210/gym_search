@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(user_id: current_user.id)
     customer = Stripe::Customer.create({
-                                         source: params[:stripeToken]
+                                        source: params[:stripeToken]
                                        })
     subscription = Stripe::Subscription.create({
                                                  customer: customer.id,
