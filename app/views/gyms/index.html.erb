@@ -40,7 +40,7 @@
 <div class="input-group mb-3">
   <%= form_with(url: search_gyms_path, local: true, method: :get, class: "form-control") do |form| %>
     <%= form.text_field :keyword, placeholder: "店舗名・所在地で検索する", class: "form-control" %>
-    <%= form.submit "検索", class:"btn btn-outline-secondary" %>
+    <%= form.submit "検索", class:"btn btn-outline-info" %>
   <% end %>
 </div>
 
