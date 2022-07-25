@@ -5,7 +5,9 @@
           <p><%= flash[:error] %></p>
         </div>
       <% end %>
-
+    <% if @team.present? %>
+        <span>現在月額料金登録中です。</span>
+    <% else %>
       <label class="amount">
         <span>月額料金: 500円</span>
       </label>
@@ -20,6 +22,7 @@
             data-label="購入する">
 
     </script>
+    <% end %>
 <% end %>
 <% if @team.present? %>
 <%= link_to "解約する",@team, method: :delete, data: { confirm: "解約しますがいいですか?"}%>
