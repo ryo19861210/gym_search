@@ -73,3 +73,6 @@ gem "geocoder"
 gem "gon"
 gem 'rabl-rails'
 gem 'stripe'
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
